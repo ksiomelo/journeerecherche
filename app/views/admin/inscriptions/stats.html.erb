@@ -1,0 +1,42 @@
+
+<div id="col_gauche">
+	
+</div>
+
+								
+<div id="col_central">
+
+	<div class="accordian">
+		
+		<h2 class="header">Stats</h2>
+		
+		<p>
+		Inscriptions: <%= @inscriptions_count %> (ECP: <%= @ecp_count %>, Supélec:  <%= @inscriptions_count-@ecp_count %>) <br/>
+		Présentations <%= @presenter_count %> <br/><br/>
+		Entreprises: <%= @entreprise_count %> <br/>
+		Participants des entreprises (total): <%= @participant_count %> <br/>
+		Déjeuners (entreprises): <%= @entreprise_lunch_count %> <br/>
+		Entreprises qui veulent faire des entretiens: <%= @entretenir_count %> <br/>
+		</p>
+		
+		<div class="separation_contenus"><!-- Do not remove --></div>
+		
+	
+	</div>
+	
+	<div class="digg_pagination">
+    <%= will_paginate(@inscriptions, :container => false) if @inscriptions %>
+  </div>
+</div>
+
+
+							
+
+
+
+
+
+
+
+
+

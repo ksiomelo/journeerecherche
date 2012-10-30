@@ -1,0 +1,42 @@
+<h2>Liste des présentateurs</h2>
+ 
+ <div id="col_central">
+ 	
+<% if @presenters and not @presenters.empty?%>
+ <table>
+ 		<tr>
+ 			<th>
+ 				Nom
+ 			</th>
+ 			<th>
+ 				E-mail
+ 			</th>
+ 			<th>
+ 				Laboratoire
+ 			</th>
+ 			<th>
+ 				Status
+ 			</th>
+ 			<th>
+ 				École
+ 			</th>
+ 			<th>
+ 				Téléphone
+ 			</th>
+ 		</tr>
+   <% @presenters.each do |entretien|%>
+ 	<tr>
+ 		<td><%= link_to entretien.first_name.capitalize + " " + entretien.last_name.upcase, entretien%></td>
+ 		<td><%= entretien.email %></td>
+ 		<td><%= get_labo(entretien.laboratory) %></td>
+ 		<td><%= get_status(entretien.status)%></td>
+ 		<td><%= get_centrale(entretien.centrale) %></td>
+ 		<td><%= entretien.telephone %></td>
+ 	</tr>
+ 	 <%end%>
+ </table>
+  <%else%>
+  <p style="font-weight: bold;">Personne.</p>
+ <%end%>
+ 
+ </div>

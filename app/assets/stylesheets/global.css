@@ -1,0 +1,607 @@
+/* CSS Document */
+/* --------------------------------------------------------------------------------------------- Remise � z�ro de tous les pr�formatages navigateurs */
+	body {
+		font-size:62.5%;
+		font-family:arial, helvetica, sans-serif;
+		color:#000;
+		/*background:#FFF;*/
+		/*background:url(../../images/media/home/rugby.jpg) center 74px no-repeat*/
+	}
+	a {text-decoration:none}
+	a:hover {text-decoration:none;}
+	a:active, a:focus{outline:none;}
+	img {border:none}
+	a img {border: none}
+	strong {font-weight:bold}
+	em {font-style:italic}
+	label {cursor:pointer}
+	abbr, acronym {
+	  border-bottom:1px dotted #333;
+	  cursor:help
+	}	
+	.breaker{
+		clear:both;
+		height:0;
+		width:100%;
+		visibility:hidden;
+		
+	
+	}
+/* --------------------------------------------------------------------------------------------- background home */	
+	#backgroundHome {
+		position: relative;
+		margin:0;
+		padding:0
+	}
+	#backgroundHome .ui-tabs-panel{
+		margin:0;
+		padding:0
+	}
+	#masque_image {
+	position:absolute;
+	/*top:70px;
+	left:0;
+	overflow:hidden;*/
+	margin-top:145px;
+	width:100%;
+	height:200px;
+	left:0px;
+}
+/* --------------------------------------------------------------------------------------------- Page */
+	#page {
+		/*width:1250px;
+		width:100%\9;
+		width:100%;*/
+		margin:0 auto;
+		/*padding : 0 12px;*/
+		width: 980px;
+		
+	}
+/* --------------------------------------------------------------------------------------------- Global */
+	#global {
+		/*float:left;
+		width:100%;*/
+		/*margin:0 auto;*/
+	}
+/* --------------------------------------------------------------------------------------------- Header */
+	#header {
+		/*float:left;
+		width:100%;*/
+		height: 74px;
+	}
+	#header h1 {/*width:540px*/;float:left;position:relative;height:74px;}
+/* ----------------------------------------------------- Logo */
+	#header #logo {float:left;/*margin:0 0 0 124px*/}
+/* ----------------------------------------------------- Devise */
+	#header #devise {margin:10px 0 0 10px}
+/* ----------------------------------------------------- Acc�s rapides */
+	#header #acces_rapides {width:390px;float:left;padding:23px 0 0 25px;text-align:right;}
+	#header #acces_rapides li {
+		display:inline;
+		font-size:1.1em;
+		padding:0 8px 0 8px;
+	}
+	#header #acces_rapides li:last-child {
+		background:none;
+	}
+	#header #acces_rapides li a {color:#a3a3a3}
+/* ----------------------------------------------------- Choix langues */
+	#choix_langue {
+		width:50px;
+		float:left;
+		padding:15px 0 0 0;	
+		position:relative;
+		z-index:5000;
+	}
+	#langues {
+		position:absolute;
+		width:48px;
+		left:0;
+		top:45px;
+	}
+	
+	#langues li {
+		display:block;
+		padding:4px 0 3px 5px;
+		background:url(../../images/structure/bckd_langueli.png) no-repeat left top;
+	}
+	#langues li:last-child {
+		background-image: none;
+		background-color: #ffffff;
+	}
+	#langues li:last-child img{
+	padding-bottom:3px;
+	}
+/* ----------------------------------------------------- Recherche */
+	#header #recherche {
+		float:right;
+		font-size:1.1em;
+		margin-top:18px;
+		color:#a3a3a3;
+	}
+	#header #recherche fieldset {
+		border:none;	
+		padding-bottom: 3px;
+	}
+	#header #recherche legend, #header #recherche label {
+		display:none;
+	}
+	#header #recherche input.champ_recherche {
+		width:150px;
+		font-size:1em;
+		border:1px solid #eeeeee;
+		border-right:none;
+		padding:3px 0 3px 3px;
+		margin:0 0 0 3px;
+	}
+	#header #recherche input.bouton {
+		font-size:0.9em;
+		color:#a3a3a3;
+		background:#FFF url(../../images/structure/separateur_input.gif) left 2px no-repeat;
+		border:1px solid #eeeeee;
+		border-left:none;
+		padding:2px 4px 2px 2px !important;
+		cursor:pointer
+	}
+	#header #recherche a {
+		display:block;
+		margin:5px 0 0 86px;
+		cursor:pointer;
+		text-decoration:underline;
+	}
+	#header #recherche a:hover {
+		text-decoration:none;
+	}
+	
+/* --------------------------------------------------------------------------------------------- Main */
+	#main {
+		/*clear:both;
+		position:absolute;
+		top:70px;
+		float:left;
+		font-size:1.1em;
+		clear:both;
+		float:left;*/
+		position:relative;
+		/*top:-48px;*/
+		font-size:1.1em;
+	}
+	.wrapper_slider{
+		min-height:490px;
+		background-color:transparent
+}
+/* --------------------------------------------------------------------------------------------- Contenu */
+	#contenu {
+		font-size:1.1em;
+		padding:12px 0 0 0;
+		
+	}
+/* --------------------------------------------------------------------------------------------- Compass */
+	#barre_outils {
+		clear:both;
+		/*width:1120px;*/
+	}
+	#compas {
+		float:left;
+		font-size:0.8em;
+		text-transform:lowercase;
+/* 		background:url(../../images/structure/background/compas.gif) no-repeat left 50%; */
+		padding:6px 20px 20px 30px ;
+		width:550px;
+	}
+	#compas span {
+		color:#000;
+	}
+	#compas a {color:#7e7e7e;background:url(../../images/structure/puce_compas.gif) right 4px no-repeat;padding-right:8px;margin-right:6px}
+/* --------------------------------------------------------------------------------------------- Telechargement */
+	#telechargement {
+		float:left;
+		width:140px;
+		/*position:relative;*/
+		font-size:1.1em;
+		color:#434343;
+		border:1px solid #eeeeee;
+		padding:3px 0 3px 3px;
+		margin:0 0 0 3px;
+	}
+	#telechargement_slide {
+		float:left;
+		height:24px;
+		position:relative;
+		
+	}
+	#telechargement_slide ul {
+		display:block;
+		width:155px;
+		background:#e7e7e7;
+		border:#CCC 1px solid;
+		position:absolute;
+		z-index:900;/*5000;*/
+		padding:6px 0;
+		left:0;
+		top:24px;
+	}
+	#telechargement_slide ul li {
+		display:block;
+		padding:6px;
+	}
+	#telechargement_slide ul li a {
+		color:#434343;
+		text-decoration:none;
+		font-size:0.8em;
+	}
+	#telechargement_slide ul li a:hover {
+		text-decoration:underline;
+	}
+/* --------------------------------------------------------------------------------------------- Retour */
+	#back_page {
+		float:left;
+		padding:6px 0;
+	}
+	#back_page a {
+		color:#434343;
+		text-decoration:none;
+		background:url(../../images/structure/p_retour_violet.gif) left top no-repeat;
+		padding:2px 0 0 20px;
+	}
+	#back_page a:hover {
+		text-decoration:underline;
+	}
+/* --------------------------------------------------------------------------------------------- Outils */
+	#outils {
+		float:right;
+		/*padding-left:130px;
+		width:140px;*/
+	}
+	#outils li {
+		display:inline;
+		padding-left:6px;
+	}
+	#outils li a img {
+		vertical-align:middle;
+	}
+/* --------------------------------------------------------------------------------------------- Contenu Principal */
+ #contenu_principal {
+	/*clear:both;
+	float:left;
+	overflow:hidden;*/
+ }
+ /**+html #contenu_principal {
+	width:1120px;
+ }*/
+/* ------------------------------------------------------------------------- Titres */
+	/*h1 {
+		font-size:1.4em;
+		color:#;
+		margin-bottom:10px
+	}
+	h2 {
+		clear:both;
+		font-size:1.2em;
+		color:#;
+		margin-bottom:8px
+	}*/
+	/*h3 {
+		clear:both;
+		font-size:1.1em;
+		color:#;
+		margin-bottom:6px
+	}
+	h4 {
+		clear:both;
+		font-size:1em;
+		margin-bottom:2px
+	}
+	h5, h6 {
+		clear:both;
+		font-size:1em
+	}*/
+	/****** *****/
+	#menu_principal li ul {
+		display:block;
+		clear:both;
+		float:left;
+		position:absolute;
+		/*left:130px;*/
+		left:0px;
+		top:46px;
+	}	
+	
+	
+	#rub1_menu ul {
+		background-color:#008559;
+		background:url(../../images/structure/menuCentral/bg_rub1.png) repeat-x scroll 0 2px transparent;
+	}
+	#rub1_menu ul li.deco {
+		display:block;
+		height:12px;
+		width:23px;
+		position:absolute;
+		top:-11px;
+		left:46px;
+		background:url(../../images/structure/pic_rub1.gif) center top no-repeat;
+	}
+
+	#rub2_menu ul {
+		background-color:#86144e;
+		background:url(../../images/structure/menuCentral/bg_rub2.png) repeat-x scroll 0 2px transparent;
+	}
+	#rub2_menu ul li.deco {
+		display:block;
+		height:12px;
+		width:23px;
+		position:absolute;
+		top:-11px;
+		left:176px;
+		background:url(../../images/structure/pic_rub2.gif) center top no-repeat;
+	}
+
+	#rub3_menu ul {
+		background-color:#0083ab;
+		background:url(../../images/structure/menuCentral/bg_rub3.png) repeat-x scroll 0 2px transparent;
+	}
+	#rub3_menu ul li.deco {
+		display:block;
+		height:12px;
+		width:23px;
+		position:absolute;
+		top:-11px;
+		left:297px;
+		background:url(../../images/structure/pic_rub3.gif) center top no-repeat;
+	}	
+	#rub4_menu ul {
+		background-color:#f29405;
+		background:url(../../images/structure/menuCentral/bg_rub4.png) repeat-x scroll 0 2px transparent;
+	}
+	#rub4_menu ul li.deco {
+		display:block;
+		height:12px;
+		width:23px;
+		position:absolute;
+		top:-11px;
+		left:416px;
+		background:url(../../images/structure/pic_rub4.gif) center top no-repeat;
+	}
+	
+	#rub5_menu {
+		background:url(../../images/structure/puce_international_menu.gif) 100px 32px no-repeat;	
+	}
+	#rub5_menu ul li.deco {
+		display:block;
+		height:12px;
+		width:23px;
+		position:absolute;
+		top:-11px;
+		left:552px;
+		background:url(../../images/structure/pic_rub5.gif) center top no-repeat;
+	}	
+	#rub6_menu {
+		background:url(../../images/structure/puce_admission_menu.gif) 100px 32px no-repeat;
+	}
+	#rub6_menu ul li.deco {
+	
+		display:block;
+		height:12px;
+		width:23px;
+		position:absolute;
+		top:-11px;
+		left:686px;
+		background:url(../../images/structure/pic_rub6.gif) center top no-repeat;
+	}	
+	#menu_principal li ul li {
+	
+		display:inline;
+		float:left;
+		font-size:0.9em;
+		font-weight:bold;
+		text-transform:none;
+		 white-space: nowrap;
+		padding:3px 0px 3px 12px;
+		/*margin-top:3px;*/
+		height:26px;
+		/*width:110px;*/
+	}
+	#menu_principal li ul li a {
+		/*padding: 4px 10px;*/
+		/*margin: 4px 0 0;*/
+		display:block;
+		height:29px;
+		line-height:27px;
+		padding:0 2px;
+	}
+	#menu_principal li ul li a:hover {
+		background-color:#FFF;
+		-moz-border-radius:4px 4px 0 0;
+		-webkit-border-radius: 4px 4px 0 0;
+		border-radius: 4px 4px 0 0;
+		border-radius:4px 4px 0 0 4px 4px 0 0;     
+		-webkit-border-top-left-radius: 4px; /* pour Chrome */ 
+		-webkit-border-top-right-radius: 4px; /* pour Chrome */
+		padding:0 2px;
+	}
+	#menu_principal li ul li a.selected {
+		display:block;
+		height:29px;
+		line-height:27px;
+		padding:0 2px;
+		background-color:#FFF;
+		-moz-border-radius: 4px 4px 0 0; 
+		-webkit-border-radius: 4px 4px 0 0; 
+		border-radius: 4px 4px 0 0;
+		border-radius:4px 4px 0 0 4px 4px 0 0;                  
+		-webkit-border-top-left-radius: 4px; /* pour Chrome */ 
+		-webkit-border-top-right-radius: 4px; /* pour Chrome */
+	}
+	
+	
+	/**********************/
+	
+	
+	
+/* --------------------------------------------------------------------------------------------- Footer */
+	#footer {
+		width:100%;
+	}
+	.footer-wrapper {
+		padding : 0 12px;
+		width: 980px;
+		margin:0 auto;
+	}
+/* ----------------------------------------------------- contextuel */
+	#footer #contextuel_bas {
+		height:50px;
+		padding:18px 0px 0;
+		width: 980px;
+		margin:0 auto;
+	}
+	#footer #contextuel_bas li {
+		display:inline;
+		padding-right:10px;
+	}
+	#footer #contextuel_bas .contextual_item {
+		float: left;
+		margin:
+	}
+	#footer #contextuel_bas .contextual_item a{
+		display:block;
+		/*margin-right:10px*/
+	}
+	#footer #contextuel_bas img {
+		float: left;
+		max-height: 28px;
+	}
+	#footer #contextuel_bas .contextual_text {
+		/*margin-top: 7px;*/
+		color: #434343;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 1.1em;
+		/*vertical-align: text-bottom;*/
+		/*height:100%;*/
+		padding-left:6px;
+		/*line-height:28px;
+		max-width: 100px;
+		min-width: 80px;*/
+		width:65px;
+		float:left;
+		display:block;
+	}
+/* ----------------------------------------------------- principal */
+	#footer #menu_all {
+		/*clear:both;
+		float:left;*/
+		/*padding-top:4px;*/
+		min-height:55px;
+		background:transparent url(../../images/structure/footer-principal-background.jpg) center top repeat-y;
+		/**min-height:55px;
+		*width:1258px;*/
+	}
+	#footer #background-menu_principal{
+		background:transparent url(../../images/structure/bande_colors.gif) center top no-repeat;
+		padding-top:4px;
+		
+	}
+	#footer #menu_all #footer_principal {
+		/*padding-left:160px;*/
+		background-color:#2b292a;
+		/*height:18px;*/
+		display:block;
+		/*padding : 0px 12px ;*/
+		width: 980px;
+		margin:0 auto;
+		position:relative;
+		/*height:1%;*/
+	}
+	#footer #menu_all #footer_principal ul{
+		float:left;
+		
+	}
+	#footer #menu_all #footer_principal li {
+		float:left;
+		width:130px;
+		display:inline-block;
+		/*height:18px;*/
+		padding-top:20px;
+		padding-bottom:5px;
+		padding-left:30px;
+		
+		
+	}
+	#footer #menu_all #footer_principal #fleche_down {
+		width:12px;
+		padding-left:0px;
+		right:6px;
+		position:absolute;
+	}
+	#footer #menu_all #footer_principal li a {
+		color:#b5b5b5;
+		font-size:1.2em;
+		font-weight:bold;
+	}
+	#footer #menu_all #footer_principal li .nav_footer {
+		float:left;
+		width:100%;
+		height:auto;
+		background-color:#2b292a;
+	}
+	#footer #menu_all #footer_principal li .nav_footer li {
+		padding-top:5px;
+		padding-left:6px;
+		line-height:1.6em;
+	}
+	#footer #menu_all #footer_principal li .liste_centrale li {
+		background:url(../../images/structure/puce_centrale.gif) left 12px no-repeat;
+	}
+	#footer #menu_all #footer_principal li .liste_formation li {
+		background:url(../../images/structure/puce_formation.gif) left 12px no-repeat;
+	}
+	#footer #menu_all #footer_principal li .liste_recherche li {
+		background:url(../../images/structure/puce_recherche.gif) left 12px no-repeat;
+	}
+	#footer #menu_all #footer_principal li .liste_recherche li {
+		background:url(../../images/structure/puce_recherche.gif) left 12px no-repeat;
+	}
+	#footer #menu_all #footer_principal li .liste_entreprise li {
+		background:url(../../images/structure/puce_entreprise.gif) left 12px no-repeat;
+	}
+	#footer #menu_all #footer_principal li .liste_international li {
+		background:url(../../images/structure/puce_international.gif) left 12px no-repeat;
+	}
+	#footer #menu_all #footer_principal li .liste_admission li {
+		background:url(../../images/structure/puce_admission.gif) left 12px no-repeat;
+	}
+	#footer #menu_all #footer_principal li .nav_footer li a {
+		font-size:1.1em;
+		font-weight:normal;
+	}
+/* ----------------------------------------------------- secondaire */
+	.footer_secondaire-wrapper{
+		position:relative;
+		height:36px;
+		padding : 21px 0px 0;
+	}
+	#footer #footer_secondaire {
+		
+		
+		/*width:1258px;*/
+		
+		
+		color:#9f9f9f;
+		text-align:right;
+		
+		width: 980px;
+		margin:0 auto;
+	}
+	#footer #footer_secondaire li {
+		display:inline;
+		font-size:1.2em;
+		padding:0 0px 0 40px;
+	}
+	#footer #footer_secondaire a {
+		color:#9f9f9f;
+	}
+	
+/* ---------------------------------------------------- backporting */
+#compas ul li {
+	float:left;
+}

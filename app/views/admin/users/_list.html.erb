@@ -1,0 +1,37 @@
+
+<table>
+  <tr>
+  	<th></th>
+    <th>Nom</th>
+    <th>Participants</th>
+    <th>Déjeuner?</th>
+    <th>Interview?</th>
+     <th>Contact</th>
+     
+    <% unless approved %>
+    	 <th></th>
+    <%end%>
+    <th></th>
+  </tr>
+
+<% users.each do |user| %>
+  <tr>
+  	<td><%= (user.logo_file_name) ? user.logo.url(:thumb) : "" %></td>
+    <td><%= link_to user.name, display_admin_user_path(user) %></td>
+    <td><%= user.participants %></td>
+    <td><%= (user.lunch?) ? "oui" : "non"%></td>
+    <td><%= (user.wants_to_interview?) ? "oui" : "non" %></td>
+    <td><%= (user.responsable) ? (user.responsable + " (" + user.telephone + ")") : "" %></td>
+    
+    <% unless approved %>
+    	<td>
+   		<%= link_to(image_tag('accept.png', :alt => 'Accepter', :title => "Accepter"), approve_admin_user_path(user))%><br/>
+   		</td>
+    <%end%>
+    
+    <td>
+    <%= link_to(image_tag('reject.png', :alt => 'Rejeter', :title => "Rejeter"), admin_user_path(user), :confirm => "Vous etes sur? Rappelez vous d'envoyer un mail à: "+user.email+" en precisant les raisons de la suppression.", :method => :delete )%>
+    </td>
+  </tr>
+<% end %>
+</table>

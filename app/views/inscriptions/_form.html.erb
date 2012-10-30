@@ -1,0 +1,90 @@
+<%= form_for(@inscription, :html => { :onsubmit => 'return verifyCV();'}) do |f| %>
+  <% if @inscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inscription.errors.count, "error") %> prohibited this inscription from being saved:</h2>
+
+      <ul>
+      <% @inscription.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div><%= f.label :email %>*<br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :first_name, "Prénom" %>*<br />
+  <%= f.text_field :first_name %></div>
+  
+  <div><%= f.label :last_name, "Nom" %>*<br />
+  <%= f.text_field :last_name %></div>
+  
+   <div><%= f.label :avatar, "Photo (optionnel)" %><br />
+  <%= f.file_field :avatar %></div>
+  
+   <div style="margin-top: 20px;">
+  <%= f.radio_button(:centrale, true, :checked => true, :onchange => "changeLabos(true);") %>
+	<%= f.label(:centrale, "Centrale Paris") %><br />
+	<%= f.radio_button(:centrale, false,  :onchange => "changeLabos(false);") %>
+   <%= f.label(:centrale, "Supélec") %>
+   </div>
+  
+   <div><%= f.label :laboratory, "Laboratoire" %>*<br />
+ <%= select(:inscription, :laboratory, [['MAS', 1], ['LGI', 2],['MSSMat', 3] ,['LGPM', 4],['EM2C', 5],['SPMS', 6],['LPQM', 7],['LISMMA', 8]],:selected =>1) %></div>
+  
+  <div><%= f.label :status %>*<br />
+ <%= select(:inscription, :status, [['Doctorant - 1ere année', 1], ['Doctorant - 2eme année', 2], ['Doctorant - 3eme année', 3] ,['Master', 4],['Chercheur', 5],['Visiteur', 6], ['Professeur', 7],['Entreprise', 8]],:selected => 2) %></div>
+  
+  <%= f.label :areas, "Domaine(s) de recherche" %>*
+  <fieldset>
+  	
+ 
+ <% if @areas %>
+ <div style='float:left; width:48%;'>
+  <% @areas.each_with_index do |area, index|  %>
+	 <div>
+	  <%= check_box_tag "inscription[area_ids][]", area.id, @inscription.areas.include?(area) %>
+	  <%= area.name %>
+	  </div>
+	  <%= (index == @areas.size()/2 ) ? raw("</div><div style='float:left; width:48%;'>") : "" %>
+<% end %>
+</div>
+<% end %>
+
+</fieldset>
+
+
+  
+ 
+
+   <div><%= f.label :telephone,"Téléphone " %> (optionnel)<br />
+  <%= f.text_field :telephone %></div>
+  
+  <!--
+  <div><%# f.label :birthday, "Date de naissance" %><br />
+  <%# f.date_select :birthday, :order => [:day, :month, :year],:default=> Date.today - 28.years %></div>
+  -->
+  
+ 
+  
+  
+  <div style="margin-top: 20px;"><%= f.label :cv, "Curriculum" %><span class="snippet">(pdf, doc, docx, txt)</span><br />
+ <%= f.file_field :cv %></div>
+ 
+  
+  <div>
+  <%= f.check_box(:wants_to_present, :checked => true) %>
+  <%= f.label(:wants_to_present, "Je voudrai exposer un poster") %>
+</div>
+  
+ 
+  
+  
+  
+   <p>On cliquant "s'inscrire" vous êtes d'accord à fournir votre CV aux entreprises associées.</p>
+  
+  <div class="actions">
+    <%= f.submit "S'inscrire" %>
+  </div>
+<% end %>

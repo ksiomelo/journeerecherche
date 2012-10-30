@@ -1,0 +1,288 @@
+#col_central table.t_data {
+	margin-bottom: 25px;
+}
+
+#col_central table.t_data td{
+	text-align: left;
+}
+#col_central table.nocolor tr:hover{
+	background-color:transparent;
+}
+
+
+#col_central table{
+	margin-top:12px;
+}
+
+
+
+#col_central table th{
+	padding: 8px;
+	border-bottom: 1px solid #BBB;
+	border-top: 1px solid #BBB;
+}
+
+#col_central table th:hover{
+	background-color:transparent;
+}
+
+#col_central table tr:hover{
+	background-color: #FAFAFF;
+}
+
+#col_central table td{
+	padding: 8px;
+	border-bottom: 1px solid #DDD;
+	text-align:center;
+}
+
+
+#error_explanation h2{
+	font-size:14px;
+	color:red;
+}
+
+form label{
+	padding-bottom: 5px;
+}
+
+form fieldset {
+	background-color: #EDEDED;
+    padding: 16px;
+}
+
+form fieldset div {
+	padding: 2px;
+}
+
+span.snippet {
+	color:#888;
+	font-style: italic;
+	padding-left: 10px;
+}
+
+p.alertmsg {
+    border-radius: 4px 4px 4px 4px;
+    margin: 8px 0 18px 0;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+p.alert{
+	background-color: #FCF8E3;
+    border: 1px solid #FBEED5;
+    color: #C09853;
+}
+
+p.notice{
+	background-color: #DFF0D8;
+    border: 1px solid #D6E9C6;
+    color: #468847;
+	
+}
+
+#visu {
+	background: url('journeerecherchelogo.jpg') no-repeat scroll center top transparent;
+}
+
+
+div .page_hs {
+	background-color: #86144E; height: 30px;
+    padding-bottom: 15px;
+    position: absolute;
+    top: 225px;
+    width: 100%;
+    z-index: 4500; 
+}
+
+div .page_hs h2 { 
+	color: #FFFFFF; font-size: 18px;
+    padding: 12px 0 0 16px;
+}
+
+div .page_hs ul {
+	display:block;
+	list-style: none outside none;
+}
+
+div .page_hs ul li {
+	display:inline;
+	float:left;
+	padding: 3px 0 3px 12px;
+	white-space: nowrap;
+}
+
+div .page_hs ul li a{
+	color: #FFFFFF; font-size: 16px;
+	padding: 10px;
+	display:block;
+	text-decoration: underline;
+}
+
+form div {
+	padding: 8px;
+}
+
+
+div .field_with_errors {
+	color:red;
+	display:inline;
+	padding:0;	
+}
+
+
+div .button_insc {
+	z-index: 50000;
+	position:absolute; 
+	margin-left: 720px; 
+	width: 200px; 
+	height: 60px; 
+	 -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+	
+}
+
+div .enterprises {
+	background-color: #EE6A44;
+	top:220px; 
+}
+div .students {
+	top:140px; 
+	background-color:#64A8A3;
+	
+}
+
+div .button_insc a {
+	color:#FFFFFF;
+	font-size: 16px;
+	padding:20px 15px 0;
+	display:block;
+	text-decoration:underline;
+	text-align: center;
+}
+
+div .button_insc a.enterlink{
+	padding-top:12px;
+}
+div .button_insc a.oulogin{
+	font-size: 12px;
+	padding:0;
+}
+
+#header #acces_rapides li.login_opts a {
+	
+	color:#000;
+}
+
+#profile  {
+	margin-bottom: 28px;
+	font-size: 14px;
+}
+#profile h2{
+	color:#008559 ; font-size: 20px;
+	padding: 20px 0;
+	
+	
+}
+#profile span{
+	display:block;
+	padding: 10px 0;
+}
+
+#col_central a.fav_btn {
+padding: 10px 20px;
+margin: 20px 0;
+background-color:#FCF8E3;
+color:#C09853;
+font-size:12px;	
+font-weight: normal;
+text-decoration: none;
+border: 2px solid #FBEED5;
+ -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+div.pagination {
+	font-size:14px;
+	padding: 18px 0;
+}
+
+
+#menu_secondaire li.legend {
+	border-top: 1px dotted #DDDDDD;
+    color: #BBBBBB;
+    margin-top: 12px;
+    text-transform: none;
+}
+#menu_secondaire li.legend:hover {
+	background-color: transparent;
+}
+
+#menu_secondaire li.selected {
+	background-color: #EFEFEF;
+}
+
+#col_central .digg_pagination {
+    background: none repeat scroll 0 0 white;
+    cursor: default;
+    margin-top: 20px;
+}
+#col_central .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    display: block;
+    float: left;
+    margin-right: 1px;
+    padding: 0.4em 0.7em;
+    text-decoration: none;
+}
+#col_central .digg_pagination .disabled {
+    border: 1px solid #DDDDDD;
+    color: #999999;
+}
+#col_central .digg_pagination .current {
+    background: none repeat scroll 0 0 #2E6AB1;
+    border: 1px solid #2E6AB1;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+}
+#col_central .digg_pagination a {
+    border: 1px solid #9AAFE5;
+    color: #105CB6;
+    text-decoration: none;
+}
+#col_central .digg_pagination a:hover, .digg_pagination a:focus {
+    border-color: #000033;
+    color: #000033;
+}
+#col_central .digg_pagination .page_info {
+    background: none repeat scroll 0 0 #2E6AB1;
+    color: white;
+    margin-bottom: 0.3em;
+    padding: 0.4em 0.6em;
+    text-align: center;
+    width: 22em;
+}
+#col_central .digg_pagination .page_info b {
+    background: none repeat scroll 0 0 #6AA6ED;
+    color: #000033;
+    padding: 0.1em 0.25em;
+}
+#col_central .digg_pagination:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+* html .digg_pagination {
+    height: 1%;
+}
+:first-child + html .digg_pagination {
+    overflow: hidden;
+}

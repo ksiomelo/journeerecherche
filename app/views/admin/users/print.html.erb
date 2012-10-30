@@ -1,0 +1,7 @@
+
+<h2>Liste des entretiens de <%= @user.name  %></h2>
+<span>Contact: <%= (@user.responsable) ? (@user.responsable + " (" + @user.email + " - " + @user.telephone + ")") : "" %></span>
+ 
+ <div id="col_central">
+ <%= render :partial => "list_interviews" , :locals => { :user => @user }%>
+ </div>

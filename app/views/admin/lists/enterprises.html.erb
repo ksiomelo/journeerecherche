@@ -1,0 +1,36 @@
+<h2>Liste des enterprises</h2>
+ 
+ <div id="col_central">
+ 	
+<% if @enterprises and not @enterprises.empty?%>
+
+<span>Nombre total de déjeneurs (entreprises): <%= @entreprise_lunch_count %></span>
+
+ <table>
+ 		<tr>
+ 			<th>Nom</th>
+		    <th>Participants</th>
+		    <th>Déjeuner?</th>
+		    <th>Interview?</th>
+		     <th>Contact</th>
+ 		</tr>
+   <% @enterprises.each do |user|%>
+ 	<tr>
+ 		<td><%= link_to user.name, display_admin_user_path(user) %></td>
+	    <td><%= user.participants %></td>
+	    <td><%= (user.lunch?) ? "oui" : "non"%></td>
+	    <td><%= (user.wants_to_interview?) ? "oui" : "non" %></td>
+	    <td><%= (user.responsable) ? (user.responsable + " (" + user.telephone + ")") : "" %></td>
+ 	</tr>
+ 	 <%end%>
+ </table>
+  <%else%>
+  <p style="font-weight: bold;">Aucune entreprise.</p>
+ <%end%>
+ 
+ </div>
+ 
+ 
+ 
+ 
+ 

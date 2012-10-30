@@ -1,0 +1,113 @@
+@media print  
+{
+    div{
+        page-break-inside: avoid;
+    }
+}
+
+@page  
+{ 
+    size: auto;   /* auto is the initial value */ 
+
+    /* this affects the margin in the printer settings */ 
+    margin: 2mm 2mm 2mm 2mm;  
+} 
+
+body  
+{ 
+    /* this affects the margin on the content before sending to printer */ 
+    margin: 0px;  
+} 
+
+
+div.badge_row {
+	width:100%;
+	float:left;
+}
+
+#badge {
+	width: 87mm; /* 90mm x 55mm*/
+	height: 53mm;
+	overflow:hidden;
+	border: 1mm solid #000000;
+	float:left;
+	page-break-inside: avoid;
+
+}
+
+
+#badge h1 {
+	padding: 0;
+	margin: 4mm 0 4mm 0;
+	font-size:14px;
+	font-family:arial, helvetica, sans-serif;
+	color:#008559;
+	text-align: center;
+}
+#badge h2 {
+	padding: 0;
+	margin: 6mm 0 4mm 0;
+	font-size:24px;
+	font-weight: bold;
+	font-family:arial, helvetica, sans-serif;
+	color:#000;
+	text-align: center;
+}
+
+#badge h3 {
+	margin: 4mm 0 4mm 0;
+	text-align: center;
+	font-size:14px;
+	font-family:arial, helvetica, sans-serif;
+	color:#555;
+}
+
+div.info {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-size:12px;
+	font-family:arial, helvetica, sans-serif;
+	color:#555;
+}
+
+
+
+
+#col_central table.t_data {
+	margin-bottom: 25px;
+}
+
+#col_central table.t_data td{
+	text-align: left;
+}
+#col_central table.nocolor tr:hover{
+	background-color:transparent;
+}
+
+
+#col_central table{
+	margin-top:12px;
+}
+
+
+
+#col_central table th{
+	padding: 8px;
+	border-bottom: 1px solid #BBB;
+	border-top: 1px solid #BBB;
+}
+
+#col_central table th:hover{
+	background-color:transparent;
+}
+
+#col_central table tr:hover{
+	background-color: #FAFAFF;
+}
+
+#col_central table td{
+	padding: 8px;
+	border-bottom: 1px solid #DDD;
+	text-align:center;
+}

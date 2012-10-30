@@ -1,0 +1,37 @@
+ 
+ <% if user.inscriptions and not user.inscriptions.empty?%>
+ <table>
+ 		<tr>
+ 			<th>
+ 				Nom
+ 			</th>
+ 			<th>
+ 				E-mail
+ 			</th>
+ 			<th>
+ 				Laboratoire
+ 			</th>
+ 			<th>
+ 				Status
+ 			</th>
+ 			<th>
+ 				École
+ 			</th>
+ 			<th>
+ 				Téléphone
+ 			</th>
+ 		</tr>
+   <% user.inscriptions.each do |entretien|%>
+ 	<tr>
+ 		<td><%= link_to entretien.first_name + " " + entretien.last_name.upcase, entretien%></td>
+ 		<td><%= entretien.email %></td>
+ 		<td><%= get_labo(entretien.laboratory) %></td>
+ 		<td><%= get_status(entretien.status)%></td>
+ 		<td><%= get_centrale(entretien.centrale) %></td>
+ 		<td><%= entretien.telephone %></td>
+ 	</tr>
+ 	 <%end%>
+ </table>
+  <%else%>
+  <p style="font-weight: bold;">Aucun entretien pour l'instant.</p>
+ <%end%>

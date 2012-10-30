@@ -1,0 +1,54 @@
+
+<% if @badges and not @badges.empty?%>
+<% @badges.each_with_index do |badge, idx|%>
+
+<% if idx != 0 and idx%10 == 0 %>
+<DIV style="page-break-after:always"></DIV>
+<%end%>
+
+
+<% if idx%2 == 0 %>
+<div class="badge_row">
+<div id="badge">
+<% else %>
+<div id="badge" style="float: left">
+<% end %>
+
+	<h1>Journée de la Recherche 2012</h1>
+	<h2><%= badge.first_name.capitalize + " " + badge.last_name.upcase %></h2>
+	
+	<% if badge.status == 8  %>
+	<h3><%= badge.telephone %></h3>
+	<div style="margin: 8mm 0 0 0;">&nbsp;</div>
+	<%else%>
+	<h3><%= get_labo(badge.laboratory) %></h3>
+ 	
+ 	<div class="info"><%= get_status(badge.status)%></div>
+ 	<div class="info"><%= get_centrale(badge.centrale) %></div>
+ 	<%end%>
+ 	
+ 	<% if badge.status == 8 %>
+ 	<div style="background-color: red; margin-top:3mm; width:100%; height: 6mm;">&nbsp;</div>
+ 	<%elsif badge.wants_to_present %>
+	<div style="background-color: blue; margin-top:3mm; width:100%; height: 6mm;">&nbsp;</div>
+	<%elsif badge.status == 3 %>
+	<div style="background-color: green; margin-top:3mm; width:100%; height: 6mm;">&nbsp;</div>
+	<%elsif badge.status == 5 || badge.status == 7%>
+	<div style="background-color: orange; margin-top:3mm; width:100%; height: 6mm;">&nbsp;</div>
+	<%end%>
+	
+</div>
+
+
+<% if idx%2 == 1 %>
+</div> <!-- end of badge_row -->
+<% end %>
+
+
+
+<% if idx == (@badges.size-1) and idx%2 == 0 %>
+</div> <!-- end of badge_row for last element in first column -->
+<% end %>
+
+<%end%>
+<%end%>

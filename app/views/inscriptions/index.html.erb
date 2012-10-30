@@ -1,0 +1,47 @@
+
+<div id="col_gauche">
+	<ul id="menu_secondaire">
+		<%= get_filters() %>
+	</ul>
+</div>
+
+								
+<div id="col_central">
+
+	<div class="accordian">
+		
+		<h2 class="header">Liste des participants</h2>
+		
+		<% if @inscriptions and not @inscriptions.empty? %>
+			<p style="font-weight: bold;"> <%= @inscriptions.total_entries  %> inscriptions trouvées.</p>
+			<p>Merci de revenir à cette page de temps en temps pour voir des nouveaux inscrits.</p>
+			
+			<%= render :partial => "list" , :locals => { :inscriptions => @inscriptions,:back_to => inscriptions_url }%>
+			<% else %>
+			<p style="font-weight: bold;">Aucune inscription sur cette rubrique pour l'instant.</p>
+			<p>Merci de revenir à cette page de temps en temps pour voir des nouveaux inscrits.</p>
+			
+		<% end %>
+		
+		
+		<div class="separation_contenus"><!-- Do not remove --></div>
+		
+	
+	</div>
+	
+	<div class="digg_pagination">
+    <%= will_paginate(@inscriptions, :container => false) if @inscriptions %>
+  </div>
+</div>
+
+
+							
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+
+<table>
+  <tr>
+  	<th></th>
+    <th>Nom</th>
+    <th>Status</th>
+    <th>Laboratoire</th>
+    <th>École</th>
+    <th>CV</th>
+    <th></th>
+    <% unless approved %>
+    	 <th></th>
+    <%end%>
+  </tr>
+
+<% inscriptions.each do |inscription| %>
+  <tr>
+  	<td><%= get_avatar(inscription.avatar, :thumb) %></td>
+    <td><%= link_to inscription.first_name + ' '+inscription.last_name, inscription %></td>
+    <td><%= get_status(inscription.status)%></td>
+    <td><%= get_labo(inscription.laboratory) %></td>
+    <td><%= get_centrale(inscription.centrale) %></td>
+    
+    <td><%= link_to("download", inscription.cv.url) if inscription.cv_file_name %></td>
+    
+    <% unless approved %>
+    	<td>
+   		<%= link_to(image_tag('accept.png', :alt => 'Accepter', :title => "Accepter"), approve_admin_inscription_path(inscription))%><br/>
+   		</td>
+    <%end%>
+    
+    <td>
+    <%= link_to(image_tag('reject.png', :alt => 'Rejeter', :title => "Rejeter"), admin_inscription_path(inscription), :confirm => "Vous etes sur? Rappelez vous d'envoyer un mail à: "+inscription.email+" en precisant les raisons de la suppression.", :method => :delete )%>
+    </td>
+  </tr>
+<% end %>
+</table>

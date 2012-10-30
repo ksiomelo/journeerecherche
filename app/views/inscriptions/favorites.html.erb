@@ -1,0 +1,24 @@
+					
+<div id="col_central">
+
+	<div class="accordian">
+		
+		<h2 class="header">Mes entretiens</h2>
+		
+		
+		<% if @inscriptions and not @inscriptions.empty? %>
+			<%= render :partial => "list" , :locals => { :inscriptions => @inscriptions, :back_to => favorites_inscriptions_url  }%>
+		<% else %>
+			<p style="font-weight: bold;">Aucun profil a été selectioné pour l'instant.</p>
+		<% end %>
+
+
+
+	<div class="separation_contenus"><!-- Do not remove --></div>
+	</div>
+	
+	<div class="digg_pagination">
+    <%= will_paginate(@inscriptions, :container => false) if @inscriptions %>
+ 	 </div>
+</div>
+

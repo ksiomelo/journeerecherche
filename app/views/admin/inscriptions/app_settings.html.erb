@@ -1,0 +1,55 @@
+
+<div id="col_gauche">
+</div>
+
+
+								
+<div id="col_central">
+
+	<div class="accordian">
+		
+		<h2 class="header">Configuration</h2>
+		
+		<%= form_for(@app_settings) do |f| %>
+		  
+
+		 <div>
+		 Inscription des enterprises: 
+		  <%= f.check_box :enterprise_register %>
+		</div>
+		
+		 <div>
+		 Login des enterprises: 
+		  <%= f.check_box :enterprise_login %>
+		</div>
+		
+		 <div>
+		 Inscription des éleves 
+		  <%= f.check_box :student_register %>
+		</div>
+		
+		
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		<% end %>
+
+		
+		<div class="separation_contenus"><!-- Do not remove --></div>
+		
+	
+	</div>
+	
+</div>
+
+
+							
+
+
+
+
+
+
+
+
+

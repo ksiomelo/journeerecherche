@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		
+		<%= stylesheet_link_tag "widget41", "styles","reset","formation","galerie","global","interne","languageSwitchingLinks","right_col","application" %>
+  		<%= javascript_include_tag "jquery-1.6.2.min.js","application" %>
+  		<%= csrf_meta_tags %>
+	
+
+		<title>Journée de la Recherche 2012 :: Centrale-Supélec</title>
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta name="author" content="Ecole Centrale Paris, ecole ingenieur">
+
+		<meta name="keywords" content="ecole ingenieur, ingenieurs, paris, centrale, projet">
+		<meta name="description" content="Ecole d'ingenieur, Ecole Centrale Paris - projet educatif du cycle ingenieur">
+		
+		
+		<link rel="shortcut icon" href="http://www.ecp.fr/templates/ecp_internet_templates/images/favicon.ico">
+		
+		
+		
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-30395529-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+		
+		
+		</head>
+
+<body>
+		<a class="hidden" id="ctn94_14285" name="ctn94_14285"></a>
+	
+	
+		<div id="actualContent">
+
+			
+			<div id="visu"></div>
+			<!--
+			<div id="masque_image" style="background: url('/templates/ecp_internet_templates/images/structure/masque_image.png') no-repeat scroll center top transparent;">
+				<!-- do not remove 
+			</div>-->
+			<div id="page">
+				<div id="global">
+
+					<div id="header">
+						<h1>
+							<a href="http://www.ecp.fr/homepage">
+							<%= image_tag("logo_centrale_paris.png", :id=>"logo", :alt=>"Centrale Paris")%>
+							<!--
+							<img id="logo" src="Cursus_ingenieur_centralien_files/logo_centrale_paris.png" alt="Centrale Paris">
+							-->
+							
+							</a>
+							<%= image_tag("devise_centrale_paris.gif", :id=>"devise", :alt=>"Ecole Centrale Paris leader, entrepreneur, innovateur")%>
+						</h1>
+						<ul id="acces_rapides">
+							<li>
+
+					<a href="http://www.ecp.fr/plan_d_acces">
+						Plan d'accès</a>
+					</li>
+							<li>
+					<a href="http://www.ecp.fr/home/contacts">
+						Contacts</a>
+					</li>
+							<li>
+
+					<a href="http://www.ecp.fr/home/presse">
+						Presse</a>
+					</li>
+					<li>|</li>
+					<li class="login_opts">
+						<% if current_user %>
+						
+						 <%=current_user.email%> | <%= link_to("Logout", destroy_user_session_path, :method => :delete) %>
+					
+					<%else%>
+					<%= link_to("Login entreprise", new_user_session_path) %>
+					<%end%>
+					</li>
+					
+						</ul>
+						
+						<div class="breaker">
+							<!-- do not remove -->
+
+						</div>
+					</div>
+					
+					<% unless current_user  %>
+					
+					<% if @app_settings.student_register  %>
+					<div class="button_insc students">
+						<%= link_to ('Inscription', new_inscription_path)%>
+					</div>
+					<% end  %>
+					
+					<% if @app_settings.enterprise_register  %>
+					<div class="button_insc enterprises">
+						<%= link_to ('Inscription Entreprise', new_user_registration_path, :class=> "enterlink")%><br/>
+						<%= link_to ('ou login',  new_user_session_path, :class=> "oulogin")%>
+						
+					</div>
+					<% end  %>
+					<% end %>
+					
+					<div id="main">
+						
+						<a href="/">
+						<div id="wrapper-visu">
+							<!--ne rien mettre ici-->
+						</div>
+						</a>
+						
+						<% if current_user %>
+							<div class="page_hs">
+								<ul>
+							<% if current_user.admin? %>
+							
+							<li>
+									<%= link_to ('Stats', stats_admin_inscriptions_path)%>
+							</li>
+							<li>
+									<%= link_to ('Modérer inscriptions', to_moderate_admin_inscriptions_path)%>
+								</li>
+								<li>
+									<%= link_to ('Modérer entreprises', to_moderate_admin_users_path)%>
+								</li>
+								<li>
+									<%= link_to ('Listes', admin_lists_path)%>
+								</li>
+								<li>
+									<%= link_to ('Configuration', app_settings_admin_inscriptions_path)%>
+								</li>
+							<% else %>
+							
+								<li>
+									<%= link_to ('Liste des candidats', inscriptions_path)%>
+								</li>
+								<li>
+									<%= link_to ('Mes entretiens', favorites_inscriptions_path)%>
+								</li>
+							<% end %>
+							</ul>
+							</div>
+						<% end %>
+						
+						
+						
+						<div id="contenu">
+
+<% if flash[:alert] %>
+    <p class="alertmsg alert"><%= flash[:alert] %></p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="alertmsg notice"><%= flash[:notice] %></p>
+  <% end %>
+
+
+	
+<div id="contenu_principal">
+<%= yield %>
+</div>							
+						</div>
+					</div>
+
+					<div class="breaker">
+						<!-- do not remove -->
+					</div>
+
+				</div>
+			</div>
+			<div id="footer">
+				
+				
+				<div class="footer_secondaire-wrapper">
+					<ul id="footer_secondaire">
+
+						<li>
+							<a href="http://www.ecp.fr/home/mentions_legales">
+								Mentions légales</a>
+						</li>
+						<li>
+							<a href="http://www.ecp.fr/home/contacts">
+								Contacts</a>
+						</li>
+
+						<li>
+							<a href="http://www.cin.ufpe.br/~cam2">
+								&copy; 2012 Cassio Melo</a>
+						</li>
+						
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+	
+
+</body></html>

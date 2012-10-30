@@ -1,0 +1,47 @@
+<div id="col_gauche">
+	<div style="display:block; float: right; margin-right: 50px;">
+<%= link_to('&#8592; Retour'.html_safe,  to_moderate_admin_users_path ) %>
+</div>
+
+<div id="profile">
+	
+	
+	
+  <h2><%= @user.name  %></h2>
+  <div>
+	<span class="snippet"><%= (@user.logo_file_name) ? @user.logo.url(:medium) : "(pas d'image)" %></span>
+	</div>
+  
+  <span>E-mail: <%= @user.email %></span>
+  <span>Tagline: <%= @user.tagline %></span>
+  <span>Website: <%= @user.website %> </span>
+  <span>Domaines: <%= @user.domain %></span>
+  <span>Responsable: <%= (@user.responsable) ? (@user.responsable + " (" + @user.telephone + ")") : "" %></span>
+  <span>Participants: <%= @user.participants %></span>
+  <span>Commentaires: <br/><%= (@user.comments) ? @user.comments : "(pas de commentaires)" %></span>
+  
+  <span style="margin-top:20px;">Déjeuner: <%= ( @user.lunch) ? 'oui' : 'non' %></span>
+ <span>Entretien: <%= ( @user.wants_to_interview) ? 'oui' : 'non' %></span>
+</div>
+
+<%= link_to(image_tag('reject.png', :alt => 'Rejeter', :title => "Rejeter") + " supprimer", admin_user_path(@user), :confirm => "Vous etes sur? Rappelez vous d'envoyer un mail à: "+@user.email+" en precisant les raisons de la suppression.", :method => :delete )%>
+
+
+</div>
+<div id="col_central">
+
+<h2>Liste des entretiens</h2>
+
+<%= link_to "Version imprimable", print_admin_user_path%> <br/><br/>
+
+ <%= render :partial => "list_interviews" , :locals => { :user => @user }%>
+ 
+
+<br/><br/>
+<%= link_to "Version imprimable", print_admin_user_path%>
+ 
+ 
+ 
+
+
+</div>

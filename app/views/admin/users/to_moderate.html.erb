@@ -1,0 +1,51 @@
+
+<div id="col_gauche">
+	<ul id="menu_secondaire">
+		
+		<li class="selected">
+			<%= link_to "En attente (" + User.waiting.count.to_s+")", to_moderate_admin_users_path %>
+		</li>
+		<li>
+			<%= link_to "Approuvées (" + User.approved.count.to_s+")", admin_users_path%>
+		</li>
+		
+	</ul>
+</div>
+
+								
+<div id="col_central">
+
+	<div class="accordian">
+		
+		<h2 class="header">Entreprises à modérer</h2>
+		
+		<% if @users.empty? %>
+		<p style="font-weight: bold;">Aucune entreprise pour l'instant.</p>
+		<% else %>
+		<p style="font-weight: bold;"> <%= @users.total_entries  %> entreprises à moderer.</p>
+		
+		<%= render :partial => "list" , :locals => { :users => @users, :approved => false }%>
+		<% end %>
+		
+		
+		<div class="separation_contenus"><!-- Do not remove --></div>
+		
+	
+	</div>
+	
+	<div class="digg_pagination">
+    <%= will_paginate(@users, :container => false) if @users %>
+  </div>
+</div>
+
+
+							
+
+
+
+
+
+
+
+
+

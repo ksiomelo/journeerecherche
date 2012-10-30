@@ -1,0 +1,51 @@
+
+<div id="col_gauche">
+	<ul id="menu_secondaire">
+		
+		<li>
+			<%= link_to "En attente (" + Inscription.waiting.count.to_s+")", to_moderate_admin_inscriptions_path %>
+		</li>
+		<li class="selected">
+			<%= link_to "Approuvées (" + Inscription.approved.count.to_s+")", admin_inscriptions_path%>
+		</li>
+		
+	</ul>
+</div>
+
+								
+<div id="col_central">
+
+	<div class="accordian">
+		
+		<h2 class="header">Inscriptions approuvées</h2>
+		
+		<% if @inscriptions.empty? %>
+		<p style="font-weight: bold;">Aucune inscription pour l'instant.</p>
+		<% else %>
+		<p style="font-weight: bold;"> <%= @inscriptions.total_entries  %> inscriptions trouvées.</p>
+		
+		<%= render :partial => "list" , :locals => { :inscriptions => @inscriptions, :approved => true }%>
+		<% end %>
+		
+		
+		<div class="separation_contenus"><!-- Do not remove --></div>
+		
+	
+	</div>
+	
+	<div class="digg_pagination">
+    <%= will_paginate(@inscriptions, :container => false) if @inscriptions %>
+  </div>
+</div>
+
+
+							
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+
+<table>
+  <tr>
+  	<th></th>
+    <th>Nom</th>
+    <th>Status</th>
+    <th>Laboratoire</th>
+    <th>École</th>
+    <th>CV</th>
+    <th>Entretien</th>
+  </tr>
+
+<% inscriptions.each do |inscription| %>
+  <tr>
+  	<td><%= link_to(get_avatar(inscription.avatar, :thumb), inscription) %></td>
+    <td><%= link_to inscription.first_name + ' '+inscription.last_name, inscription %></td>
+    <td><%= get_status(inscription.status)%></td>
+    <td><%= get_labo(inscription.laboratory) %></td>
+    <td><%= get_centrale(inscription.centrale) %></td>
+    <td><%= link_to("download", inscription.cv.url) if inscription.cv_file_name %></td>
+    <td>
+    <% if not inscription.professor? %>
+	    <% if current_user.inscriptions.include? inscription %>
+	    <%= image_tag 'star.png', :alt => 'Ce profil est dans vos entretiens', :title => "Ce profil est dans vos favoris"%>
+	    <%else%>
+	    <%= link_to(image_tag('star_empty.png', :alt => 'Ajouter aux entretiens', :title => "Ce profil est dans vos favoris"), add_to_favorites_inscription_path(:id=> inscription, :ref => back_to))%>
+	    <%end%>
+	 <%end%>
+    </td>
+  </tr>
+<% end %>
+</table>

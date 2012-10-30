@@ -1,0 +1,51 @@
+<div id="col_gauche">
+	<div style="display:block; float: right; margin-right: 50px;">
+<%= link_to('&#8592; Retour'.html_safe, (current_user.admin?) ? to_moderate_admin_inscriptions_path : inscriptions_path) %>
+</div>
+</div>
+<div id="col_central">
+		<h2 class="header">Profil du candidat</h2>
+
+<div id="profile">
+	
+  <h2><%= @inscription.first_name + ' ' + @inscription.last_name %></h2>
+  <div>
+	<span class="snippet"><%= get_avatar(@inscription.avatar, :medium) %></span>
+	</div>
+  <span><%= get_status(@inscription.status) %> - <%= get_labo(@inscription.laboratory) %></span>
+  <span><%= get_centrale(@inscription.centrale) %></span>
+  
+  <% if current_user.admin? %>
+  <span>E-mail (seul les admins peuvent le voir): <%= @inscription.email%></span>
+  <% end %>
+  
+   <span>
+   	Domaines de recherche:
+   	<ul>
+   	<% for area in @inscription.areas %>
+   	<li><%= area.name %></li>
+   	
+   	<%end %>
+</ul>
+   </span>
+  
+  <span>Va exposer un poster: <%= ( @inscription.wants_to_present) ? 'oui' : 'non' %></span>
+  <% if @inscription.cv_file_name %>
+  <span>Curriculum: <%= link_to "download", @inscription.cv.url %> </span>
+ <% else  %>
+ <span class="snippet">(CV pas disponible)</span>
+  <% end %>
+</div>
+
+<% if current_user.admin? %>
+<%= link_to(image_tag('reject.png', :alt => 'Rejeter', :title => "Rejeter") + " supprimer", admin_inscription_path(@inscription), :confirm => "Vous etes sur? Rappelez vous d'envoyer un mail à: "+@inscription.email+" en precisant les raisons de la suppression.", :method => :delete )%>
+<% elsif not @inscription.professor? %>
+	<% unless current_user.inscriptions.include? @inscription %>
+	<%= link_to 'Ajouter aux entretiens', add_to_favorites_inscription_path, :class =>"fav_btn"  %> <br/>
+	<% else %>
+	<%= link_to 'Supprimer de mes entretiens', remove_from_favorites_inscription_path, :class =>"fav_btn" %><br/>
+	<% end %>
+
+<% end %>
+
+</div>

@@ -1,0 +1,80 @@
+<div id="col_central">
+
+<h2>Inscription d'une entreprise à la Journée de la Recherche 2012</h2>
+<p>Les champs avec * sont obligatoires</p>
+<p>Vous pouvez à tout instant changer vos options.</p>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html => { :multipart => true }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %>*<br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :name, "Nom de l'entreprise" %>* <span class="snippet">ex.: CRSA</span><br />
+  <%= f.text_field :name %></div>
+  
+  <div><%= f.label :tagline %>  <span class="snippet">ex.: Centrale Recherche S.A</span><br />
+  <%= f.text_field :tagline %></div>
+  
+  <div><%= f.label :domain, "Domaine" %>  <span class="snippet">ex.: recherche, chimie, physique, informatique</span><br />
+  <%= f.text_field :domain %></div>
+  
+  <div><%= f.label :website, "Adresse du site web" %><br />
+  <%= f.text_field :website %></div>
+  
+   <div><%= f.label :logo %><br />
+  <%= f.file_field :logo %></div>
+  
+      <div style="margin-top: 20px;"><%= f.label :responsable, "Nom du participant reponsable" %>* <br />
+  <%= f.text_field :responsable %></div>
+  
+   <div><%= f.label :telephone, "Contact du responsable *" %> (pour contact de l'organisation)<br />
+  <%= f.text_field :telephone %></div>
+  
+  
+  
+ 
+  
+  
+  
+  <div style="margin-top: 20px;"><%= f.label :participants, "Nombre de participants prévus" %>*<br />
+  <%= f.text_field :participants, :style => "width: 40px", :onkeyup => "calcLunch(this.value)" %></div>
+  
+   <div>
+  <%= f.check_box(:lunch, :checked => true, :onchange => "updatePrice();") %>
+  <%= f.label(:lunch, "Déjeuner *") %>
+  <span class="snippet">Prix du déjeuner complet: 15 Euros par personne. <strong>Total: <span id="total_price"></span></strong></span>
+	<p>Paiement: cheque à adresser à l'UJ2CP avant le 28/04.</p>
+</div>
+  
+  
+ <div>
+  <%= f.check_box(:wants_to_interview, :checked => true) %>
+  <%= f.label(:wants_to_interview, "Je voudrai avoir la possibilité pour entretenir des candidats") %>
+</div>
+  
+   
+  
+   <div style="margin: 16px 0 0 16px;"><%= f.label :password, "Mot de passe" %>*<br />
+  <%= f.password_field :password %> <br/> <br/>
+
+  <%= f.label :password_confirmation, "Confirmer mot de passe" %>*<br />
+  <%= f.password_field :password_confirmation %></div>
+  
+  
+   <div style="margin-top: 20px;" ><%= f.label :comments, "Commentaires" %>  <span class="snippet">Utilisez cet espace pour vos questions ou commentaires.</span><br />
+  <%= f.text_area :comments, :rows => 3 %></div>
+  
+  
+  
+ 
+
+  
+  
+
+  <div><%= f.submit "S'inscrire" %></div>
+<% end %>
+
+<%= render "links" %>
+
+</div>

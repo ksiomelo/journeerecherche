@@ -1,0 +1,93 @@
+/* CSS Document */
+/* -------------------------------------------------------------- Chiffres-cles */
+#col_gauche #chiffres-cles h3 {
+	color:#9b2684;
+}
+#col_gauche #chiffres-cles ul li {
+	background:url(../../images/structure/puce_liste_formation.gif) left 0.2em no-repeat;
+}
+#col_gauche #chiffres-cles ul li .color {
+	color:#9b2684;
+}
+/* -------------------------------------------------------------- Bloc */
+.bloc h2 {
+	color:#86144e;
+}
+.bloc h2 a {
+	color:#86144e;
+}
+.lettrine {
+	background-color:#86144e;	
+}
+.bloc h3 {
+	color:#86144e;
+}
+.bloc ul li {
+	background:url(../../images/structure/puce_liste_formation.gif) left 5px no-repeat;
+}
+.bloc .ligne {
+	border-bottom:#86144e 1px solid;
+}
+.bloc a.plus {
+	color:#86144e;
+	background:url(../../images/structure/puce_plus_formation.gif) right 8px no-repeat;
+}
+.bloc a {
+	color:#434343;
+}
+.bloc a:hover {
+	color:#86144e;
+}
+/* -------------------------------------------------------------- Zoom */
+#zoom  h2{
+	border-top:#86144e 1px solid;
+	border-bottom:#86144e 1px solid;
+	color:#86144e;
+}
+.article_zoom h3 {
+	color:#86144e;
+}
+.article_zoom a  {
+	color:#86144e;
+}
+.article_zoom img {
+	background:url(../../images/structure/encadre_zoom.gif) left top no-repeat;
+} 
+.article_zoom ul li {
+	background:url(../../images/structure/puce_liste_formation.gif) left 5px no-repeat;
+}
+.article_zoom ul li a:hover {
+	color:#86144e;
+}
+/* ------------------------------------------------------------------------------------------------ Contenu */
+#col_central h2 {
+	color:#86144e;
+}
+#col_central ul li ,#col_central ol li {
+	background:url(../../images/structure/puce_liste_formation.gif) left 0.3em no-repeat;
+}
+/*----------------------------------------------------------------Contact*/
+#form_contact .submit_field input {
+	color:#86144e;
+}
+/*------------------------------------------------------------------Pedagogie */
+#col_droite #pedagogie strong {
+	color:#86144e;
+}
+#col_droite #pedagogie ul li {
+	background: url("../../images/structure/puce_liste_formation.gif") no-repeat scroll left 0.3em transparent;
+}
+#col_droite #pedagogie h3 {
+	color:#86144e;
+}
+/*------------------------------------------------------------------Liste de liens */
+#col_central #en_savoir_plus .titre_liste_liens {
+	color:#86144e;
+}
+#col_central .peda_liste_liens {
+	border-color: #86144e;
+}
+/*------------------------------------------------------------------ Bloc de colonne de droite : Contact */
+#col_droite #contact .colored {
+	color:#86144e;
+}

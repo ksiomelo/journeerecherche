@@ -1,0 +1,27 @@
+Votre inscription a été validée
+===============================================
+ 
+<%= @user.responsable %>,
+
+Le profil pour l'entreprise <%= @user.name %> à la Journée de la Recherche 2012 a bien été prise en compte. 
+
+<% if (@user.participants and @user.participants > 0) and @user.lunch %>
+Le prix total du déjeuner pour le(s) <%= @user.participants  %> participant(s) est <%= @user.participants*15 %> Euros.
+
+Cheque à adresser avant le 30 Avril à l'UJ2CP:
+
+Direction de la Recherche - UJ2CP
+Ecole Centrale Paris
+Grande Voie des Vignes
+92295 CHATENAY-MALABRY
+
+En cas de doute n'hesitez pas à nous contacter:
+
+uj2cp@ecp.fr
+Aurélien GUY : 06 37 77 44 87
+<%end%>
+
+--
+
+La Journée de la Recherche 2012 se déroulera le 10 Mai 2012 à l'École Centrale Paris, bâtiment Lavallée 1er étage. Pour plus d'info consulter le site web http://journeerecherche.ecp.fr
+

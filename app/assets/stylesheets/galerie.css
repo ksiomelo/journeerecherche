@@ -1,0 +1,119 @@
+
+#linkImgGalerie img{
+	width:130px;
+	margin-left:5px;
+}
+
+#col_central #photo{
+position:relative;
+}
+
+.galleria-thumb-nav-left{
+	height:31px;
+}
+
+.galleria-thumb-nav-right {
+	height:31px;
+}
+
+
+.galleria-thumb-nav-left,  .galleria-image-nav-left{
+background-image:url("../../images/media/gauche.png");
+background-repeat:no-repeat;
+}
+
+ .galleria-thumb-nav-right, .galleria-image-nav-right {
+background-image:url("../../images/media/droite.png");
+background-repeat:no-repeat;
+}
+
+
+#col_central .previousPicture{
+	float:left;
+	position:relative;
+	top:35px;
+	text-decoration:none;
+-moz-background-clip:border;
+-moz-background-origin:padding;
+-moz-background-size:auto auto;
+background-attachment:scroll;
+background-color:transparent;
+background-position:0 0;
+background-repeat:no-repeat;
+	
+}
+
+#col_central .previousPicture span{
+	visibility:hidden;
+	}
+#col_central .forwardPicture span{
+	visibility:hidden;
+	}
+
+
+#col_central .forwardPicture{
+	float:right;
+	left:-20px;
+	position:relative;
+	top:35px;
+	text-decoration:none;
+	
+-moz-background-clip:border;
+-moz-background-origin:padding;
+-moz-background-size:auto auto;
+background-attachment:scroll;
+background-color:transparent;
+background-position:0 0;
+background-repeat:no-repeat;
+}
+
+
+#col_central .item{
+	display:table-cell;
+	vertical-align:middle;
+}
+
+
+
+#col_central .previousVideo{
+	float:left;
+	position:relative;
+	top:35px;
+	text-decoration:none;
+-moz-background-clip:border;
+-moz-background-origin:padding;
+-moz-background-size:auto auto;
+background-attachment:scroll;
+background-color:transparent;
+background-position:0 0;
+background-repeat:no-repeat;
+	
+}
+
+#col_central .previousVideo span{
+	visibility:hidden;
+	}
+#col_central .forwardVideo span{
+	visibility:hidden;
+	}
+
+
+#col_central .forwardVideo{
+	float:right;
+	left:-20px;
+	position:relative;
+	top:35px;
+	text-decoration:none;
+	
+-moz-background-clip:border;
+-moz-background-origin:padding;
+-moz-background-size:auto auto;
+background-attachment:scroll;
+background-color:transparent;
+background-position:0 0;
+background-repeat:no-repeat;
+}
+
+#col_central .slideshow {
+	left:-5px;
+}
